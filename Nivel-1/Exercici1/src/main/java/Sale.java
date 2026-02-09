@@ -4,8 +4,8 @@ public class Sale {
     private ArrayList<Product> products = new ArrayList<>();
     private double totalPrice;
 
-    public Sale(double toatlPrice) {
-        this.totalPrice = toatlPrice;
+    public Sale() {
+        this.totalPrice = totalPrice;
     }
 
     public ArrayList<Product> getProducts() {
@@ -30,7 +30,7 @@ public class Sale {
         }
         totalPrice = 0.0;
         for (int i = 0; i < products.size(); i++) {
-            totalPrice = totalPrice + products.get(i).getPrice();
+            totalPrice += products.get(i).getPrice();
         }
     }
 }
