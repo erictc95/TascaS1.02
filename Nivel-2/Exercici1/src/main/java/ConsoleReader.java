@@ -27,7 +27,15 @@ public class ConsoleReader {
         return value;
     }
 
-
+    public static char readChar(String message) {
+        System.out.println(message);
+        String letter = sc.nextLine();
+        if (letter.length() == 1) {
+            return letter.charAt(0);
+        } else {
+            throw new InvalidCharException(message);
+        }
+    }
 
 
 
