@@ -38,9 +38,9 @@ public class ConsoleReader {
     }
 
     public static String readString(String message) {
-        System.out.print(message);
+        System.out.print(message + " (More or equal to 10 Characters)");
         String chain = sc.nextLine();
-        if (chain.length() < 10) {
+        if (chain.length() <= 10) {
             throw new IllegalArgumentException("The string must be at least 10 characters long.");
         } else {
             return chain;
@@ -48,12 +48,11 @@ public class ConsoleReader {
     }
 
     public static boolean readYesNo(String message) {
-        System.out.println(message);
+        System.out.println(message + " (s/n)");
         String response = sc.nextLine();
-        response = response.toLowerCase();
-        if (response.equals("s")) {
+        if (response.equalsIgnoreCase("s")) {
             return true;
-        } else if (response.equals("f")) {
+        } else if (response.equalsIgnoreCase("n")) {
             return false;
         } else {
             throw new InvalidYesNoException(message);
