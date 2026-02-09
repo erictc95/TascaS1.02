@@ -24,7 +24,7 @@ public class Sale {
         this.totalPrice = totalPrice;
     }
 
-    public void calculateTotal() throws EmptySaleException {
+    public void calculateTotal() {
         if (products.isEmpty()) {
             throw new EmptySaleException();
         }
