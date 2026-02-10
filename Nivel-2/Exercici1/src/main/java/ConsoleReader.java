@@ -72,15 +72,24 @@ public class ConsoleReader {
         return number;
     }
 
-
     public static char readChar(String message) {
-        System.out.print(message);
-        String letter = sc.nextLine();
-        if (letter.length() == 1) {
-            return letter.charAt(0);
-        } else {
-            throw new InvalidCharException(message);
+        String letter = "";
+        boolean isValid = false;
+
+        while (!isValid) {
+            System.out.print(message);
+            try {
+                letter = sc.nextLine();
+                if (letter.length() == 1) {
+                    isValid = true;
+                } else {
+                    throw new InvalidCharException("This value is not a char. Try again!");
+                }
+            } catch (InvalidCharException e) {
+                System.out.println(e.getMessage());
+            }
         }
+        return letter.charAt(0);
     }
 
     public static String readString(String message) {
