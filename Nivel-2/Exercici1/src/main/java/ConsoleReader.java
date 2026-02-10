@@ -112,6 +112,7 @@ public class ConsoleReader {
         return chain;
     }
 
+
     public static boolean readYesNo(String message) {
         System.out.println(message + " (s/n)");
         String response = sc.nextLine();
