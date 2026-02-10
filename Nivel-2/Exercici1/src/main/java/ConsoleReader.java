@@ -13,7 +13,7 @@ public class ConsoleReader {
             try {
                 value = sc.nextByte();
                 isValid = true;
-            } catch (InputMismatchException e){
+            } catch (InputMismatchException e) {
                 System.out.println("The number must be between -128 and 127. Try again!");
                 sc.nextLine();
             }
@@ -73,7 +73,7 @@ public class ConsoleReader {
     }
 
 
-        public static char readChar(String message) {
+    public static char readChar(String message) {
         System.out.print(message);
         String letter = sc.nextLine();
         if (letter.length() == 1) {
@@ -104,7 +104,6 @@ public class ConsoleReader {
             throw new InvalidYesNoException(message);
         }
     }
-
 
 
 }
