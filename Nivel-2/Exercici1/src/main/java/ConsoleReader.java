@@ -112,18 +112,24 @@ public class ConsoleReader {
         return chain;
     }
 
-
     public static boolean readYesNo(String message) {
-        System.out.println(message + " (s/n)");
-        String response = sc.nextLine();
-        if (response.equalsIgnoreCase("s")) {
-            return true;
-        } else if (response.equalsIgnoreCase("n")) {
-            return false;
-        } else {
-            throw new InvalidYesNoException(message);
+        String response = "";
+
+        while (true) {
+            System.out.print(message + " (s/n): ");
+            try {
+                response = sc.nextLine();
+                if (response.equalsIgnoreCase("s")) {
+                    return true;
+                } else if (response.equalsIgnoreCase("n")) {
+                    return false;
+                } else {
+                    throw new InvalidYesNoException("The response only can be 's' or 'n'. Try again!");
+                }
+            } catch (InvalidYesNoException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
-
 
 }
