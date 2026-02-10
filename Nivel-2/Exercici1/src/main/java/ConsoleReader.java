@@ -55,7 +55,25 @@ public class ConsoleReader {
         return number;
     }
 
-    public static char readChar(String message) {
+    public static double readDouble(String message) {
+        double number = 0.0;
+        boolean isValid = false;
+
+        while (!isValid) {
+            System.out.print(message);
+            try {
+                number = sc.nextDouble();
+                isValid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("This isn't a valid double number. Try again!");
+                sc.nextLine();
+            }
+        }
+        return number;
+    }
+
+
+        public static char readChar(String message) {
         System.out.print(message);
         String letter = sc.nextLine();
         if (letter.length() == 1) {
