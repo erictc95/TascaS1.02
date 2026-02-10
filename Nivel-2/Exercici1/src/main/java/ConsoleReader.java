@@ -77,7 +77,7 @@ public class ConsoleReader {
         boolean isValid = false;
 
         while (!isValid) {
-            System.out.print(message);
+            System.out.print(message + "Only one letter");
             try {
                 letter = sc.nextLine();
                 if (letter.length() == 1) {
@@ -93,13 +93,23 @@ public class ConsoleReader {
     }
 
     public static String readString(String message) {
-        System.out.print(message + " (More or equal to 10 Characters)");
-        String chain = sc.nextLine();
-        if (chain.length() <= 10) {
-            throw new IllegalArgumentException("The string must be at least 10 characters long.");
-        } else {
-            return chain;
+        String chain = "";
+        boolean isValid = false;
+
+        while (!isValid) {
+            System.out.print(message + " (More or equal to 10 Characters)");
+            try {
+                chain = sc.nextLine();
+                if (chain.length() >= 5 && chain.length() <= 20) {
+                    isValid = true;
+                } else {
+                    throw new IllegalArgumentException("The string must be between 5 and 20 characters long.");
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
+        return chain;
     }
 
     public static boolean readYesNo(String message) {
