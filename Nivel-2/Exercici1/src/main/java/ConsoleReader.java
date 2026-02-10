@@ -63,6 +63,7 @@ public class ConsoleReader {
             System.out.print(message);
             try {
                 number = sc.nextDouble();
+                sc.nextLine();
                 isValid = true;
             } catch (InputMismatchException e) {
                 System.out.println("This isn't a valid double number. Try again!");
@@ -77,7 +78,7 @@ public class ConsoleReader {
         boolean isValid = false;
 
         while (!isValid) {
-            System.out.print(message + "Only one letter");
+            System.out.print(message);
             try {
                 letter = sc.nextLine();
                 if (letter.length() == 1) {
@@ -97,7 +98,7 @@ public class ConsoleReader {
         boolean isValid = false;
 
         while (!isValid) {
-            System.out.print(message + " (More or equal to 10 Characters)");
+            System.out.print(message + " (More or equal to 10 Characters: ");
             try {
                 chain = sc.nextLine();
                 if (chain.length() >= 5 && chain.length() <= 20) {
@@ -131,5 +132,4 @@ public class ConsoleReader {
             }
         }
     }
-
 }
