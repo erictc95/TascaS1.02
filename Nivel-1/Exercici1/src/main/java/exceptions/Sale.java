@@ -1,3 +1,5 @@
+package exceptions;
+
 import java.util.ArrayList;
 
 public class Sale {
