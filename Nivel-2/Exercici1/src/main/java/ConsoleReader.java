@@ -21,7 +21,22 @@ public class ConsoleReader {
         return value;
     }
 
+    public static int readInt(String message) {
+        int number = 0;
+        boolean isValid = false;
 
+        while (!isValid) {
+            System.out.print(message);
+            try {
+                number = sc.nextInt();
+                isValid = true;
+            } catch (InputMismatchException e) {
+                System.out.println("The number is not a valid int. Try again!");
+                sc.nextLine();
+            }
+        }
+        return number;
+    }
 
     public static char readChar(String message) {
         System.out.print(message);
