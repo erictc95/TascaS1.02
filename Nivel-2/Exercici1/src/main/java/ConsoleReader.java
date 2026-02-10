@@ -1,31 +1,27 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleReader {
     private static Scanner sc = new Scanner(System.in);
 
     public static byte readByte(String message) {
-        System.out.print(message);
-        Byte value = sc.nextByte();
+        byte value = 0;
+        boolean isValid = false;
+
+        while (!isValid) {
+            System.out.print(message);
+            try {
+                value = sc.nextByte();
+                isValid = true;
+            } catch (InputMismatchException e){
+                System.out.println("The number must be between -128 and 127. Try again!");
+                sc.nextLine();
+            }
+        }
         return value;
     }
 
-    public static int readInt(String message) {
-        System.out.print(message);
-        int value = sc.nextInt();
-        return value;
-    }
 
-    public static float readFloat(String message) {
-        System.out.print(message);
-        float value = sc.nextFloat();
-        return value;
-    }
-
-    public static double readDouble(String message) {
-        System.out.print(message);
-        double value = sc.nextInt();
-        return value;
-    }
 
     public static char readChar(String message) {
         System.out.print(message);
