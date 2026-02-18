@@ -1,4 +1,4 @@
-package exceptions2;
+package exercise2exceptions;
 
 public class InvalidCharException extends RuntimeException {
     public InvalidCharException(String message) {

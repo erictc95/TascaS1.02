@@ -1,10 +1,12 @@
-package exceptions;
+package exercise1exceptions;
+
+import exceptions.EmptySaleException;
 
 import java.util.ArrayList;
 
 public class Sale {
     private ArrayList<Product> products = new ArrayList<>();
-    private double totalPrice;
+    private double totalPrice = 0.0;
 
     public Sale() {
         this.totalPrice = totalPrice;
@@ -31,8 +33,8 @@ public class Sale {
             throw new EmptySaleException();
         }
         totalPrice = 0.0;
-        for (int i = 0; i < products.size(); i++) {
-            totalPrice += products.get(i).getPrice();
+        for (Product product:products) {
+            totalPrice += product.getPrice();
         }
     }
 }

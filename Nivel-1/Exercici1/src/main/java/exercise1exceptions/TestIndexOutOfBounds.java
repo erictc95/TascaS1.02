@@ -1,4 +1,6 @@
-package exceptions;
+package exercise1exceptions;
+
+import exceptions.EmptySaleException;
 
 public class TestIndexOutOfBounds {
     public static void main(String[] args) {

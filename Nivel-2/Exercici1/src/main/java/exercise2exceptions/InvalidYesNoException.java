@@ -1,4 +1,4 @@
-package exceptions2;
+package exercise2exceptions;
 
 public class InvalidYesNoException extends RuntimeException {
     public InvalidYesNoException(String message) {

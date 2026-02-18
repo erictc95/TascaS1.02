@@ -1,5 +1,8 @@
 package exceptions2;
 
+import exercise2exceptions.InvalidCharException;
+import exercise2exceptions.InvalidYesNoException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -76,23 +79,14 @@ public class ConsoleReader {
     }
 
     public static char readChar(String message) {
-        String letter = "";
-        boolean isValid = false;
-
-        while (!isValid) {
+        while (true) {
             System.out.print(message);
-            try {
-                letter = sc.nextLine();
-                if (letter.length() == 1) {
-                    isValid = true;
-                } else {
-                    throw new InvalidCharException("This value is not a char. Try again!");
-                }
-            } catch (InvalidCharException e) {
-                System.out.println(e.getMessage());
+            String letter = sc.nextLine();
+            if (letter.length() == 1) {
+                return letter.charAt(0);
             }
+            System.out.println("This value isn't a char. Try again!");
         }
-        return letter.charAt(0);
     }
 
     public static String readString(String message) {
@@ -103,7 +97,7 @@ public class ConsoleReader {
             System.out.print(message + " (More or equal to 10 Characters: ");
             try {
                 chain = sc.nextLine();
-                if (chain.length() >= 5 && chain.length() <= 20) {
+                if (chain.length() >= 10) {
                     isValid = true;
                 } else {
                     throw new IllegalArgumentException("The string must be between 5 and 20 characters long.");

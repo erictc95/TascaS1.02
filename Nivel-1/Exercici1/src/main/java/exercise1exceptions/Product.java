@@ -1,4 +1,4 @@
-package exceptions;
+package exercise1exceptions;
 
 public class Product {
     private String name;
