@@ -12,7 +12,7 @@
 
 ## ⚙️ Requirements
 
-- Java JDK 11 o superior
+- Java JDK 25 o superior
 - Maven
 - IntelliJ IDEA (optional, but recommended)
 
