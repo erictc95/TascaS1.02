@@ -1,8 +1,8 @@
-package exercise1exceptions;
+package exercise1;
 
 import exceptions.EmptySaleException;
 
-public class TestIndexOutOfBounds {
+public class TestIndexOutOfBoundsMain {
     public static void main(String[] args) {
         Sale sale1 = new Sale();
 
@@ -11,8 +11,8 @@ public class TestIndexOutOfBounds {
         sale1.getProducts().add(new Product("Acer", 899.50));
 
         try {
-            Product p = sale1.getProducts().get(5);
-            System.out.println("Selected product: "+ p.getName());
+            Product product = sale1.getProducts().get(5);
+            System.out.println("Selected product: "+ product.getName());
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Error catched" + e.getMessage());
         }

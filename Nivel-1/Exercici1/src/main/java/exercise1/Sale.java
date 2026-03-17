@@ -1,4 +1,4 @@
-package exercise1exceptions;
+package exercise1;
 
 import exceptions.EmptySaleException;
 
@@ -8,9 +8,6 @@ public class Sale {
     private ArrayList<Product> products = new ArrayList<>();
     private double totalPrice = 0.0;
 
-    public Sale() {
-        this.totalPrice = totalPrice;
-    }
 
     public ArrayList<Product> getProducts() {
         return products;

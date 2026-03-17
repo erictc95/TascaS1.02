@@ -1,6 +1,5 @@
 package exceptions2;
 
-import exercise2exceptions.InvalidCharException;
 import exercise2exceptions.InvalidYesNoException;
 
 import java.util.InputMismatchException;
