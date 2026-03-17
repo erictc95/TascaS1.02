@@ -1,12 +1,10 @@
 package exceptions2;
 
-import java.util.Scanner;
 
 public class MainExceptions {
 
 
-    static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
 
         // Leer un byte
         byte b = ConsoleReader.readByte("Enter a byte: ");
@@ -36,7 +34,6 @@ public class MainExceptions {
         boolean yn = ConsoleReader.readYesNo("Do you want to continue");
         System.out.println("You answered: " + (yn ? "Yes" : "No"));
 
-        sc.close();
     }
 }
 

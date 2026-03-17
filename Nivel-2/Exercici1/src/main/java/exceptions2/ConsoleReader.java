@@ -1,5 +1,6 @@
 package exceptions2;
 
+import exercise2exceptions.InvalidCharException;
 import exercise2exceptions.InvalidYesNoException;
 
 import java.util.InputMismatchException;
@@ -79,12 +80,19 @@ public class ConsoleReader {
 
     public static char readChar(String message) {
         while (true) {
-            System.out.print(message);
-            String letter = sc.nextLine();
-            if (letter.length() == 1) {
+            try {
+                System.out.print(message);
+                String letter = sc.nextLine();
+
+                if (letter.length() != 1) {
+                    throw new InvalidCharException("Input is not a single character");
+                }
+
                 return letter.charAt(0);
+
+            } catch (InvalidCharException e) {
+                System.out.println(e.getMessage());
             }
-            System.out.println("This value isn't a char. Try again!");
         }
     }
 

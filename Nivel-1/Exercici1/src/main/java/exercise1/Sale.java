@@ -3,17 +3,18 @@ package exercise1;
 import exceptions.EmptySaleException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Sale {
-    private ArrayList<Product> products = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
     private double totalPrice = 0.0;
 
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(ArrayList<Product> products) {
+    public void setProducts(List<Product> products) {
         this.products = products;
     }
 
