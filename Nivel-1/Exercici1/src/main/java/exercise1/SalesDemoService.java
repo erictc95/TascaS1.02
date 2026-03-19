@@ -27,7 +27,7 @@ public class SalesDemoService {
 
     }
 
-    public Sale createSampleSale() {
+    private Sale createSampleSale() {
         Sale sale = new Sale();
         sale.getProducts().add(new Product("Apple", 1500.50));
         sale.getProducts().add(new Product("Microsoft", 1289.50));
